@@ -101,15 +101,24 @@ function showQuetions(index){
 
     /************************** Answer  ************************/
     let option_tag = [];
-    for ( i= 0; i< questions[index].options.length ; i++)
+    let len =questions[index].options.length
+    for ( i= 0; i< len ; i++)
     {
-        //console.log(questions[index].options[i]);
         if(type == "select")
             option_tag.push('<div class="option"><span>'+ questions[index].options[i] +'</span></div>');
         else
             option_tag ='<input style="width: 100%;" id="input" class="option">';
+    }
 
-        option_list.innerHTML = option_tag; //adding new div tag inside option_tag
+    if(type == "select")
+    {
+        let results ='';
+        for ( op of option_tag)
+            results += op + " "
+        option_list.innerHTML = results;
+    }
+    else{
+        option_list.innerHTML = option_tag;
     }
     /************************** Answer  ************************/
     
@@ -117,12 +126,9 @@ function showQuetions(index){
    
     // set onclick attribute to all available options
     for(i=0; i < option.length; i++){
-
         option[i].setAttribute("onclick", "optionSelected(this)");
-
     }
 }
-
 
 
 // creating the new div tags which for icons
