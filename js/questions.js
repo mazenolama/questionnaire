@@ -4,7 +4,7 @@ let questions = [
       {
       numb: 1,
       type:"select",
-      question: "١.كم عدد أفراد العائلة البالغين من العمر 18 عاما وأكثر الرجال والنساء معك وباستثناء من يقيم خارج المنزل للدراسة أو غير ذلك؟",
+      question: "كم عدد أفراد العائلة البالغين من العمر 18 عاما وأكثر الرجال والنساء معك وباستثناء من يقيم خارج المنزل للدراسة أو غير ذلك ؟",
       options: [
         "1",
         "6-1",
@@ -13,48 +13,98 @@ let questions = [
     },
     {
       numb: 2,
-      type:"input",
-      question: "What does CSS stand for?",
+      type:"select",
+      question: "الجنس ؟",
       options: [
-        ""
+        "ذكر",
+        "أنثى"
       ]
     },
     {
       numb: 3,
-      question: "What does PHP stand for?",
-      type:"select",
-      options: [
-        "Hypertext Preprocessor",
-        "Hypertext Programming",
-        "Hypertext Preprogramming",
-        "Hometext Preprocessor"
-      ]
+      question: "العمر ؟",
+      type:"input",
+      options: [""]
     },
     {
       numb: 4,
       type:"input",
-      question: "ما اسمك؟",
-      options: [
-        ""
-      ]
+      question: "كم عدد الرجال البالغين من العمر 18 عاما وأكثر في الأسرة؟",
+      options: [""]
     },
     {
       numb: 5,
-      question: "What does SQL stand for?",
-      type:"select",
-      options: [
-        "Stylish Question Language",
-        "Stylesheet Query Language",
-        "Statement Question Language",
-        "Structured Query Language"
-      ]
+      type:"input",
+      question: "كم عدد النساء البالغين من العمر 18 عاما وأكثر في الأسرة؟",
+      options: [""]
     },
     {
       numb: 6,
+      question: "ما هي المدينة التي تقيم بها حاليا ؟",
       type:"input",
-      question: "عمرك",
+      options: [""]
+      /*options: [
+        "الرياض",
+        "مكة المكرمة",
+        "جازان",
+        "عسير",
+        "المدينة المنورة",
+        "مكة المكرمة",
+        "الدمام",
+        "القصيم",
+        "تبوك",
+        "حائل",
+        "نجران",
+        "الباحة",
+        "الجوف",
+        "الحدود الشمالية",
+      ]*/
+    },
+    {
+      numb: 7,
+      type:"input",
+      question: "كم عدد البالغين من العمر 18 عاما وأكثر المقيمين معك في المنزل ؟",
       options: [
         ""
+      ]
+    },
+    {
+      numb: 8,
+      type:"select",
+      question: "الجنس ؟",
+      options: [
+        "متزوج",
+        "مطلق",
+        "أرمل",
+        "أعزب",
+        "رفض الإجابة"
+      ]
+    },
+    {
+      numb: 9,
+      type:"select",
+      question: "ما هي السنة الدراسية أو أعلى درجة علمية حصلت عليها ؟",
+      options: [
+        "لم أدخل المدرسة",
+        "ابتدائي",
+        "متوسط",
+        "ثانوي",
+        "دبلوم بعد الثانوني",
+        "جامعي فأعلى",
+        "رفض الإجابة"
+      ]
+    },
+    {
+      numb: 10,
+      type:"select",
+      question: "هل منزلك ملك أم مستأجر ؟",
+      options: [
+        "ملك",
+        "مستأجر",
+        "أخرى",
+        "ثانوي",
+        "لا أعرف/ لست متأكدا",
+        "رفض الإجابة"
       ]
     },
   /*
