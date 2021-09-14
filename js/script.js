@@ -33,6 +33,7 @@ let ans;
 const data = [];
 var inputData=null;
 let type;
+let len;
 
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
@@ -41,8 +42,12 @@ const quit_quiz = result_box.querySelector(".buttons .quit");
 restart_quiz.onclick = ()=>{
     quiz_box.classList.add("activeQuiz"); //show quiz box
     result_box.classList.remove("activeResult"); //hide result box
+    //reset all data
     que_count = 0;
     que_numb = 1;
+    while(data.length > 0) {
+        data.pop();
+    }
     showQuetions(que_count); //calling showQestions function
     queCounter(que_numb); //passing que_numb value to queCounter
     next_btn.classList.remove("show"); //hide the next button
@@ -71,7 +76,7 @@ next_btn.onclick = ()=>{
         showQuetions(que_count); //calling showQestions function
         queCounter(que_numb); //passing que_numb value to queCounter
         next_btn.classList.remove("show"); //hide the next button
-        data.push({A:{'Q#':que_numb,'answer':ans}});
+        data.push({'Q#':que_numb,'answer':ans});
     
     }
     else
@@ -81,7 +86,7 @@ next_btn.onclick = ()=>{
             inputData=document.getElementById("input").value;
             ans =inputData; 
         }
-        data.push({Z:{'Q#':que_numb,'answer':ans}});
+        data.push({'Q#':que_numb,'answer':ans});
         showResult(); //calling showResult function
     }
 }
@@ -101,7 +106,7 @@ function showQuetions(index){
 
     /************************** Answer  ************************/
     let option_tag = [];
-    let len =questions[index].options.length
+    len =questions[index].options.length
     for ( i= 0; i< len ; i++)
     {
         if(type == "select")
@@ -158,6 +163,13 @@ function showResult(){
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
     console.log(data)
+    for (i=0; i <data.length; i++)
+    {
+        console.log(data[i].answer)
+        
+    }
+    var A1 = data[0].answer;
+    console.log(A1);
 }
 
 function queCounter(index){
